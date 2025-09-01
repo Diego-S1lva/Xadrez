@@ -5,6 +5,7 @@ int main(){
     //declaração de variáveis
     int bispo = 1;
     int rainha = 1;
+    int cavalo = 0;
 
     printf("-----------------------------\n");
     printf("BEM-VINDO AO JOGO DE XADREZ\n");
@@ -34,9 +35,25 @@ int main(){
     printf("-----------------------------\n");
     do
     {
-        printf("A rainha de moveu para a esquerda\n");
+        printf("A rainha se moveu para a esquerda\n");
         rainha++;
     } while (rainha <= 8);
+
+    //movimento cavalo
+    printf("----------------------------\n");
+    printf("Movimentação Cavalo\n");
+    printf("-----------------------------\n");
+    while (cavalo < 1)
+    {
+        cavalo++;
+        for (int i = 1; i <= 2; i++)
+        {
+            printf("Cavalo se moveu para baixo\n");
+        }
+        
+        printf("Cavalo se moveu para a esquerda\n");
+    }
+    
     
     return 0;
 }
