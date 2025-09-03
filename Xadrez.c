@@ -1,11 +1,40 @@
 #include <stdio.h>
 
+
+//função de recursividade
+    void movimentos(int inicio, int final, char movimentos[]){
+            while (inicio <= final)
+            {
+             printf("%s \n", movimentos);
+             inicio++;
+            }
+            
+            
+    }
+    void movimentosBispo(int vertical, int horizontal){
+        for (int i = vertical + 1, j = horizontal + 1;
+         i <= 5 && j <= 5;
+         i++, j++){
+            printf("Cima, Direita\n");
+         } 
+        
+        
+    }
+
 int main(){
 
     //declaração de variáveis
-    int bispo = 1;
+    int torre = 1;
+    char movimentoTorre[] = "Torre foi para direita";
+    int quantidadeMovimentosTorre =5;
+    int verticalBispo = 0;
+    int horizontalBispo = 0;
     int rainha = 1;
-    int cavalo = 0;
+    char movimentoRainha[] = "A rainha se moveu para a esquerda";
+    int quantidadeMovimentosRainha = 8;
+
+    
+    
 
     printf("-----------------------------\n");
     printf("BEM-VINDO AO JOGO DE XADREZ\n");
@@ -14,45 +43,41 @@ int main(){
     printf("----------------------------\n");
     printf("Movimentação Torre\n");
     printf("-----------------------------\n");
-    for (int i = 1; i <= 5; i++)
-    {
-        printf("Torre foi para a direita\n");
-    }
+    movimentos(torre, quantidadeMovimentosTorre, movimentoTorre );
 
     //movimento bispo
     printf("----------------------------\n");
     printf("Movimentação Bispo\n");
     printf("-----------------------------\n");
-    while (bispo <= 5)
-    {
-        printf("Bispo foi para Cima, Direita\n");
-        bispo++;
-    }
+    movimentosBispo(verticalBispo, horizontalBispo);
     
     //movimento rainha
     printf("----------------------------\n");
     printf("Movimentação Rainha\n");
     printf("-----------------------------\n");
-    do
-    {
-        printf("A rainha se moveu para a esquerda\n");
-        rainha++;
-    } while (rainha <= 8);
+    movimentos(rainha, quantidadeMovimentosRainha, movimentoRainha);
 
-    //movimento cavalo
+    // //movimento cavalo
     printf("----------------------------\n");
     printf("Movimentação Cavalo\n");
     printf("-----------------------------\n");
-    while (cavalo < 1)
+    for (int vertical = 1, horizontal = 0; vertical <= 2, horizontal <= 1; vertical++, horizontal++)
     {
-        cavalo++;
-        for (int i = 1; i <= 2; i++)
+        while (vertical <= 2)
         {
-            printf("Cavalo se moveu para baixo\n");
+            printf("Cima\n");
+            break;
+        }
+        if (vertical >= 2)
+        {
+         printf("Direita\n");
         }
         
-        printf("Cavalo se moveu para a esquerda\n");
+            
+    
+        
     }
+    
     
     
     return 0;
